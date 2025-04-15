@@ -32,8 +32,7 @@ export const Hero = () => {
 
           <a
             rel="noreferrer noopener"
-            href=""
-            target="_blank"
+            href="#about"
             className={`w-full md:w-1/3 ${buttonVariants({
               variant: "outline",
             })}`}
