@@ -1,4 +1,5 @@
-import { LogoIcon } from "./Icons";
+import logo from '/src/assets/logo.png';
+
 
 export const Footer = () => {
   return (
@@ -12,9 +13,12 @@ export const Footer = () => {
             href="/"
             className="font-bold text-xl flex"
           >
-            <LogoIcon />
-            Foster Media Network
+            <span className='w-44 h-12'>
+              <img src={logo} alt="Logo" />
+            </span>
+            {/* Foster Media Network */}
           </a>
+          <p>sarakadam10@gmail.com</p>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -29,7 +33,7 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div>
+          {/* <div>
             <a
               rel="noreferrer noopener"
               href="#"
@@ -37,20 +41,12 @@ export const Footer = () => {
             >
               Twitter
             </a>
-          </div>
+          </div> */}
 
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Dribbble
-            </a>
-          </div>
+
         </div>
 
-        <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Platforms</h3>
           <div>
             <a
@@ -81,9 +77,9 @@ export const Footer = () => {
               Desktop
             </a>
           </div>
-        </div>
+        </div> */}
 
-        <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">About</h3>
           <div>
             <a
@@ -114,7 +110,7 @@ export const Footer = () => {
               FAQ
             </a>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Privacy</h3>
@@ -139,7 +135,7 @@ export const Footer = () => {
             href=""
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Sara Kadam
+            Foster Media Network
           </a>
         </h3>
       </section>

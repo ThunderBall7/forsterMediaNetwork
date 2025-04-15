@@ -8,27 +8,27 @@ interface SponsorProps {
 const sponsors: SponsorProps[] = [
   {
     icon: <Radar size={34} />,
-    name: "Client 1",
+    name: "Claaps Technology Services",
   },
   {
     icon: <Radar size={34} />,
-    name: "Client 2",
+    name: "Cystech Controls Pvt. Ltd.",
   },
   {
     icon: <Radar size={34} />,
-    name: "Client 3",
+    name: "AscenWork Technologies Pvt. Ltd.",
   },
   {
     icon: <Radar size={34} />,
-    name: "Client 4",
+    name: "ShipBolt",
   },
   {
     icon: <Radar size={34} />,
-    name: "Client 5",
+    name: "Vgics Global",
   },
   {
     icon: <Radar size={34} />,
-    name: "Client 6",
+    name: "REGROW MEDIA",
   },
 ];
 

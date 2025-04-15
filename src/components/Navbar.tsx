@@ -82,7 +82,7 @@ export const Navbar = () => {
                     Foster Media Network0=
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                {/* <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
@@ -105,13 +105,13 @@ export const Navbar = () => {
                     <LinkedInLogoIcon className="mr-2 w-5 h-5" />
                     LinkedIn
                   </a>
-                </nav>
+                </nav> */}
               </SheetContent>
             </Sheet>
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2">
+          {/* <nav className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
               <a
                 rel="noreferrer noopener"
@@ -124,7 +124,7 @@ export const Navbar = () => {
                 {route.label}
               </a>
             ))}
-          </nav>
+          </nav> */}
 
           <div className="hidden md:flex gap-2">
             <a
