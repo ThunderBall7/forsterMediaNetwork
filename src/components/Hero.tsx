@@ -5,51 +5,96 @@ import { PersonIcon } from "@radix-ui/react-icons";
 
 export const Hero = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
-      <div className="text-center lg:text-start space-y-6">
-        <main className="text-5xl md:text-6xl font-bold">
-          <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Foster Media 
-            </span>{" "}
-            {/* landing page */} Network
-          </h1>{" "}
-          {/* for{" "} */}
-          <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              B2B Lead Generation
-            </span>{" "}
-            {/* developers <span className="text-5xl"> Specialized in B2B Market</span> */}
-          </h2>
-        </main>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Elevate Your Brand & Business With Expert Marketing Solutions
-        </p>
+    <div className="bg-white">
+      <header className="absolute inset-x-0 top-0 z-50">
+        {/* <nav className="flex items-center justify-between p-6 lg:px-8 lg:pt-3.5" aria-label="Global">
+          <div className="flex lg:flex-1">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img className="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            </a>
+          </div>
+          <div className="flex lg:hidden">
+            <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+              <span className="sr-only">Open main menu</span>
+              <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Product</a>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Features</a>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Marketplace</a>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Company</a>
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </nav> */}
+        {/* <div className="lg:hidden" role="dialog" aria-modal="true">
+          <div className="fixed inset-0 z-50"></div>
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img className="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+              </a>
+              <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span className="sr-only">Close menu</span>
+                <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Product</a>
+                  <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
+                  <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
+                  <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+                </div>
+                <div className="py-6">
+                  <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+      </header>
 
-        <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
+      <div className="relative isolate px-6 pt-14 lg:px-8 overflow-hidden">
+        {/* <div
+  className="absolute top-[-10rem] left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] rounded-full blur-3xl opacity-30 z-0"
+  aria-hidden="true"
+></div> */}
+        <div
+          className="absolute top-[-10rem] left-1/2 -translate-x-1/2 w-[100rem] h-[60rem] bg-gradient-to-tr from-[#03a2d780] via-[#61dafb98] to-[#4f94fca6] rounded-full blur-3xl opacity-30 z-0"
+          aria-hidden="true"
+        ></div>
 
-          <a
-            rel="noreferrer noopener"
-            href="#about"
-            className={`w-full md:w-1/3 ${buttonVariants({
-              variant: "outline",
-            })}`}
-          >
-            About Us
-            <PersonIcon className="ml-2 w-5 h-5" />
-          </a>
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              Elevate Your Brand & Business With Expert Marketing Solutions. <a href="#" className="font-semibold text-indigo-600"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div className="text-center">
+            <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Turn your LinkedIn into B2B Lead Machine</h1>
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a href="#" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+              <a href="#" className="text-sm/6 font-semibold text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
+        {/* <div
+  className="absolute top-[-10rem] left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] rounded-full blur-3xl opacity-30 z-0"
+  aria-hidden="true"
+></div> */}
       </div>
-
-      {/* Hero cards sections */}
-      {/* <div className="z-10">
-        <HeroCards />
-      </div> */}
-
-      {/* Shadow effect */}
-      <div className="shadow"></div>
-    </section>
+    </div>
   );
 };

@@ -1,147 +1,140 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Check } from "lucide-react";
-
-enum PopularPlanType {
-  NO = 0,
-  YES = 1,
-}
-
-interface PricingProps {
-  title: string;
-  popular: PopularPlanType;
-  price: number;
-  description: string;
-  buttonText: string;
-  benefitList: string[];
-}
-
-const pricingList: PricingProps[] = [
-  {
-    title: "Free",
-    popular: 0,
-    price: 0,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Get Started",
-    benefitList: [
-      "1 Team member",
-      "2 GB Storage",
-      "Upto 4 pages",
-      "Community support",
-      "lorem ipsum dolor",
-    ],
-  },
-  {
-    title: "Premium",
-    popular: 1,
-    price: 5,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Start Free Trial",
-    benefitList: [
-      "4 Team member",
-      "4 GB Storage",
-      "Upto 6 pages",
-      "Priority support",
-      "lorem ipsum dolor",
-    ],
-  },
-  {
-    title: "Enterprise",
-    popular: 0,
-    price: 40,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Contact US",
-    benefitList: [
-      "10 Team member",
-      "8 GB Storage",
-      "Upto 10 pages",
-      "Priority support",
-      "lorem ipsum dolor",
-    ],
-  },
-];
 
 export const Pricing = () => {
   return (
-    <section
-      id="pricing"
-      className="container py-24 sm:py-32"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Get
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          {" "}
-          Unlimited{" "}
-        </span>
-        Access
-      </h2>
-      <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        reiciendis.
-      </h3>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {pricingList.map((pricing: PricingProps) => (
-          <Card
-            key={pricing.title}
-            className={
-              pricing.popular === PopularPlanType.YES
-                ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10"
-                : ""
-            }
-          >
-            <CardHeader>
-              <CardTitle className="flex item-center justify-between">
-                {pricing.title}
-                {pricing.popular === PopularPlanType.YES ? (
-                  <Badge
-                    variant="secondary"
-                    className="text-sm text-primary"
-                  >
-                    Most popular
-                  </Badge>
-                ) : null}
-              </CardTitle>
-              <div>
-                <span className="text-3xl font-bold">${pricing.price}</span>
-                <span className="text-muted-foreground"> /month</span>
-              </div>
+    <>
+      <div className="font-sans  min-h-screen flex justify-center items-center">
+        <div>
+          <div className="text-center font-semibold">
+            <h1 className="text-5xl">
+              <span className="text-blue-700 tracking-wide">Flexible </span>
+              <span>Plans</span>
+            </h1>
+            <p className="pt-6 text-xl text-gray-400 font-normal w-full px-8 md:w-full">
+              Choose a plan that works best for you and
+              <br /> your team.
+            </p>
+          </div>
 
-              <CardDescription>{pricing.description}</CardDescription>
-            </CardHeader>
-
-            <CardContent>
-              <Button className="w-full">{pricing.buttonText}</Button>
-            </CardContent>
-
-            <hr className="w-4/5 m-auto mb-4" />
-
-            <CardFooter className="flex">
-              <div className="space-y-4">
-                {pricing.benefitList.map((benefit: string) => (
-                  <span
-                    key={benefit}
-                    className="flex"
-                  >
-                    <Check className="text-green-500" />{" "}
-                    <h3 className="ml-2">{benefit}</h3>
+          <div className="pt-24 flex flex-row gap-24">
+            {/* Basic Card */}
+            <div className="w-96 p-8 bg-white text-center rounded-3xl pr-16 shadow-xl">
+              <h1 className="text-black font-semibold text-2xl">Basic</h1>
+              <p className="pt-2 tracking-wide">
+                <span className="text-gray-400 align-top">$ </span>
+                <span className="text-3xl font-semibold">10</span>
+                <span className="text-gray-400 font-medium">/ user</span>
+              </p>
+              <hr className="mt-4 border-1" />
+              <div className="pt-8 space-y-5 text-left text-sm">
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Get started with <span className="text-black">messaging</span>
                   </span>
-                ))}
+                </p>
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Flexible <span className="text-black">team meetings</span>
+                  </span>
+                </p>
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    <span className="text-black">5 TB</span> cloud storage
+                  </span>
+                </p>
+
+                <a href="#">
+                  <p className="w-full py-4 bg-blue-600 mt-8 rounded-xl text-white text-center">
+                    <span className="font-medium">Choose Plan</span>
+                    <span className="pl-2 material-icons align-middle text-sm">east</span>
+                  </p>
+                </a>
               </div>
-            </CardFooter>
-          </Card>
-        ))}
+            </div>
+
+            {/* Startup Card */}
+            <div className="w-80 p-8 bg-gray-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform scale-125 relative">
+              <h1 className="text-white font-semibold text-2xl">Startup</h1>
+              <p className="pt-2 tracking-wide">
+                <span className="text-gray-400 align-top">$ </span>
+                <span className="text-3xl font-semibold">24</span>
+                <span className="text-gray-400 font-medium">/ user</span>
+              </p>
+              <hr className="mt-4 border-1 border-gray-600" />
+              <div className="pt-8 space-y-5 text-left text-sm">
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    All features in <span className="text-white">Basic</span>
+                  </span>
+                </p>
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Flexible <span className="text-white">call scheduling</span>
+                  </span>
+                </p>
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    <span className="text-white">15 TB</span> cloud storage
+                  </span>
+                </p>
+
+                <a href="#">
+                  <p className="w-full py-4 bg-blue-600 mt-8 rounded-xl text-white text-center">
+                    <span className="font-medium">Choose Plan</span>
+                    <span className="pl-2 material-icons align-middle text-sm">east</span>
+                  </p>
+                </a>
+              </div>
+              <div className="absolute top-4 right-4">
+                <p className="bg-blue-700 font-semibold px-4 py-1 rounded-full uppercase text-xs">Popular</p>
+              </div>
+            </div>
+
+            {/* Enterprise Card */}
+            <div className="w-96 p-8 bg-white text-center rounded-3xl pl-16 shadow-xl">
+              <h1 className="text-black font-semibold text-2xl">Enterprise</h1>
+              <p className="pt-2 tracking-wide">
+                <span className="text-gray-400 align-top">$ </span>
+                <span className="text-3xl font-semibold">35</span>
+                <span className="text-gray-400 font-medium">/ user</span>
+              </p>
+              <hr className="mt-4 border-1" />
+              <div className="pt-8 space-y-5 text-left text-sm">
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    All features in <span className="text-black">Startup</span>
+                  </span>
+                </p>
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Growth <span className="text-black">oriented</span>
+                  </span>
+                </p>
+                <p className="font-semibold text-gray-400">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    <span className="text-black">Unlimited</span> cloud storage
+                  </span>
+                </p>
+
+                <a href="#">
+                  <p className="w-full py-4 bg-blue-600 mt-8 rounded-xl text-white text-center">
+                    <span className="font-medium">Choose Plan</span>
+                    <span className="pl-2 material-icons align-middle text-sm">east</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </>
   );
-};
+}

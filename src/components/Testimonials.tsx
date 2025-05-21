@@ -1,111 +1,111 @@
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { useEffect, useState, useRef } from 'react';
 
-interface TestimonialProps {
-  image: string;
-  name: string;
-  userName: string;
-  comment: string;
-}
-
-const testimonials: TestimonialProps[] = [
+const testimonials = [
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe",
-    comment: "This landing page is awesome!",
+    name: "John Doe",
+    role: "CEO at Startup",
+    message: "This product has completely changed the way we work. Highly recommend it!",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe1",
-    comment:
-      "Lorem ipsum dolor sit amet,empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-  },
-
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe2",
-    comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    name: "Jane Smith",
+    role: "CTO at TechCo",
+    message: "Amazing experience, great support and super clean UI!",
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe3",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe4",
-    comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud.",
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe5",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: "Alice Brown",
+    role: "Marketing Head",
+    message: "Very intuitive and easy to use. Our team loves it!",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];
 
 export const Testimonials = () => {
+  const [current, setCurrent] = useState(0);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => clearTimeout(timeoutRef.current);
+  }, [current]);
+
+  const startAutoSlide = () => {
+    timeoutRef.current = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+  };
+
+  const prevSlide = () => {
+    clearTimeout(timeoutRef.current);
+    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const nextSlide = () => {
+    clearTimeout(timeoutRef.current);
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+  };
+
   return (
-    <section
-      id="testimonials"
-      className="container py-24 sm:py-32"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Discover Why
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          {" "}
-          People Love{" "}
-        </span>
-        This Landing Page
-      </h2>
-
-      <p className="text-xl text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde error
-        facere hic reiciendis illo
-      </p>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">
-        {testimonials.map(
-          ({ image, name, userName, comment }: TestimonialProps) => (
-            <Card
-              key={userName}
-              className="max-w-md md:break-inside-avoid overflow-hidden"
-            >
-              <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                <Avatar>
-                  <AvatarImage
-                    alt=""
-                    src={image}
-                  />
-                  <AvatarFallback>OM</AvatarFallback>
-                </Avatar>
-
-                <div className="flex flex-col">
-                  <CardTitle className="text-lg">{name}</CardTitle>
-                  <CardDescription>{userName}</CardDescription>
-                </div>
-              </CardHeader>
-
-              <CardContent>{comment}</CardContent>
-            </Card>
-          )
-        )}
+    <div className="relative w-full max-w-4xl mx-auto mt-16 px-4">
+      <div className="text-center mb-16">
+        <p className="text-sm font-medium text-primary mb-2 uppercase tracking-widest">Testimonials</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          What Our Clients Say
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-primary via-blue-500 to-primary mx-auto rounded-full"></div>
       </div>
-    </section>
+
+      <div className="relative overflow-hidden h-[360px] sm:h-[340px]">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {testimonials.map((item, idx) => (
+            <div key={idx} className="min-w-full px-3 py-3 rounded-xl">
+              <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 flex flex-col items-center text-center gap-5">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-24 h-24 rounded-full border-4 border-primary/30 shadow-lg"
+                />
+                <p className="text-gray-600 italic text-lg max-w-2xl">“{item.message}”</p>
+                <div>
+                  <h4 className="text-xl font-semibold text-gray-800">{item.name}</h4>
+                  <span className="text-sm text-gray-400">{item.role}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-md hover:bg-gray-100 p-2 rounded-full z-10 transition"
+          aria-label="Previous testimonial"
+        >
+          ⟨
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow-md hover:bg-gray-100 p-2 rounded-full z-10 transition"
+          aria-label="Next testimonial"
+        >
+          ⟩
+        </button>
+      </div>
+
+      <div className="flex justify-center mt-6 gap-2">
+        {testimonials.map((_, idx) => (
+          <div
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`h-3 w-3 rounded-full cursor-pointer transition-all ${
+              current === idx ? 'bg-primary scale-110' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };

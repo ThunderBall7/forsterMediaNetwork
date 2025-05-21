@@ -45,8 +45,8 @@ const routeList: RouteProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
-      <NavigationMenu className="mx-auto">
+    <header className="sticky border-b-[1px] top-0 z-40 w-full ">
+      {/* <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <a
@@ -59,7 +59,6 @@ export const Navbar = () => {
             </a>
           </NavigationMenuItem>
 
-          {/* mobile */}
           <span className="flex md:hidden">
             <ModeToggle />
 
@@ -82,50 +81,10 @@ export const Navbar = () => {
                     Foster Media Network0=
                   </SheetTitle>
                 </SheetHeader>
-                {/* <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }: RouteProps) => (
-                    <a
-                      rel="noreferrer noopener"
-                      key={label}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: "ghost" })}
-                    >
-                      {label}
-                    </a>
-                  ))}
-                  <a
-                    rel="noreferrer noopener"
-                    href="https://www.linkedin.com/in/sarakadam/"
-                    target="_blank"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
-                    })}`}
-                  >
-                    <LinkedInLogoIcon className="mr-2 w-5 h-5" />
-                    LinkedIn
-                  </a>
-                </nav> */}
+                
               </SheetContent>
             </Sheet>
           </span>
-
-          {/* desktop */}
-          {/* <nav className="hidden md:flex gap-2">
-            {routeList.map((route: RouteProps, i) => (
-              <a
-                rel="noreferrer noopener"
-                href={route.href}
-                key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
-              >
-                {route.label}
-              </a>
-            ))}
-          </nav> */}
-
           <div className="hidden md:flex gap-2">
             <a
               rel="noreferrer noopener"
@@ -140,7 +99,32 @@ export const Navbar = () => {
             <ModeToggle />
           </div>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
+      <nav className="flex items-center justify-between p-6 py-1 lg:px-8 lg:pt-1.5 backdrop-blur-sm bg-white/70 " aria-label="Global">
+          <div className="flex lg:flex-1">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img className="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            </a>
+          </div>
+          <div className="flex lg:hidden">
+            <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+              <span className="sr-only">Open main menu</span>
+              <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Product</a>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Features</a>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Marketplace</a>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Company</a>
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </nav>
     </header>
   );
 };

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import { About } from "./components/About";
-import { Cta } from "./components/Cta";
+import { ContactUs } from "./components/ContactUs";
 import { FAQ } from "./components/FAQ";
 import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
@@ -34,17 +34,17 @@ const AppContent = () => {
     <>
       <Navbar />
       <Hero />
-      <Sponsors />
       <About />
+      <Features />
+      {/* <Sponsors /> */}
       {/* <HowItWorks /> */}
-      {/* <Features /> */}
       {/* <Services /> */}
-      {/* <Cta /> */}
-      {/* <Testimonials /> */}
-      {/* <Team /> */}
-      {/* <Pricing /> */}
+      <Testimonials />
+      <Team />
+      <Pricing />
       {/* <Newsletter /> */}
       {/* <FAQ /> */}
+      <ContactUs />
       <Footer />
       <ScrollToTop />
     </>
